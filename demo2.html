@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>访问器属性</title>
+	<script type="text/javascript">
+	//getter 是调用该属性时函数被调用，setter是设置该属性时，函数被调用
+		var apple = {
+			"type":"pencil",
+			"_total":16
+		};
+		Object.defineProperty(apple,'total',{
+			get:function(){
+				return (this._total + "个");
+			},
+			set:function(newValue){
+                if(typeof(newValue) === Number){
+                	this.total = newValue;
+                }else{
+                	this.total = 0;
+                }
+			}
+		});
+		apple._total = "jfids";
+		console.log(apple.total)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

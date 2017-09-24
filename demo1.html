@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>es5属性类型设置</title>
+	<script type="text/javascript">
+	//Object.defineProperty()
+	//Object对象的属性类型设置
+	   	var a = {
+	   		"text":"abc",
+	   		"name":"小范"
+	   	};
+	   	Object.defineProperty(a,"text",{
+	   		configurable:false,//能否用delete删除
+	   		enumerable:false,//能否枚举
+	   		writable:false,//能否修改该属性的值
+            value:"小李"//可以改变属性的值，与writable无关
+	   	});
+	   	delete a.text;
+	   	a.text = "456";
+	   	console.log(a);
+	   	var i;
+	   	for( i in a){
+	   		console.log(i);
+	   	}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
